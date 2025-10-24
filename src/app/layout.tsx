@@ -19,8 +19,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Elegant Flora Boutique",
-  description: "Beautiful AI-powered website creation platform",
+  title: "Poultry Gavran Best - Fresh Desi Eggs from Village Farm",
+  description: "Premium fresh desi eggs delivered from our free-range farm in Village Rampur, Nashik. Naturally raised hens, traditional farming methods. Delivery within 24 hours to Nashik, Mumbai, and Pune.",
 };
 
 export default function RootLayout({

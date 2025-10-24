@@ -1,59 +1,78 @@
 @import "tailwindcss";
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* 🌾 POULTRY GAVRAN BEST - DESIGN SYSTEM
+ * Natural village aesthetic with warm earth tones
+ * Extracted from design reference for pixel-perfect replication
+ */
+
+/* Font Imports - Exact matches from design reference */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Open+Sans:wght@400;500;600;700&display=swap');
 
 :root {
-  /* Pure white background with crisp black text */
-  --background: 0 0% 100%;
-  --foreground: 0 0% 0%;
-
-  /* Clean white cards with black text */
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 0%;
-
-  /* Popovers with white background */
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 0%;
-
-  /* Primary: Black with white text */
-  --primary: 0 0% 0%;
+  /* 🎨 PRIMARY BRAND COLORS - Exact hex from design reference */
+  /* Forest Green: #2d5016 -> HSL: 95 70% 20% */
+  --primary: 95 70% 20%;
   --primary-foreground: 0 0% 100%;
 
-  /* Secondary: Light gray background with black text */
-  --secondary: 0 0% 97%;
-  --secondary-foreground: 0 0% 0%;
+  /* Golden Yellow: #f4d03f -> HSL: 48 88% 60% */
+  --accent: 48 88% 60%;
+  --accent-foreground: 95 70% 20%;
 
-  /* Muted: Subtle gray with darker text */
-  --muted: 0 0% 96%;
+  /* Warm Cream Background: #fdf6e3 -> HSL: 44 87% 94% */
+  --background: 44 87% 94%;
+  --foreground: 0 0% 20%;
+
+  /* Pure White for cards: #ffffff */
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 20%;
+
+  /* Secondary colors */
+  --secondary: 95 50% 35%;
+  --secondary-foreground: 0 0% 100%;
+
+  /* Muted tones for subtle elements */
+  --muted: 44 50% 85%;
   --muted-foreground: 0 0% 40%;
 
-  /* Accent: Light gray */
-  --accent: 0 0% 96%;
-  --accent-foreground: 0 0% 0%;
+  /* Popover styling */
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 20%;
 
-  /* Destructive: Clean red */
+  /* Destructive/Error states */
   --destructive: 0 70% 50%;
   --destructive-foreground: 0 0% 100%;
 
-  /* Borders: Subtle gray */
-  --border: 0 0% 90%;
-  --input: 0 0% 90%;
-  --ring: 0 0% 0%;
+  /* Borders and inputs */
+  --border: 44 30% 85%;
+  --input: 44 30% 90%;
+  --ring: 95 70% 20%;
 
-  /* Minimal rounded corners */
-  --radius: 0.375rem;
+  /* Border radius - 8px for images/cards, 25px for buttons */
+  --radius: 0.5rem;
+  --radius-button: 1.5625rem;
 
-  /* Sidebar: Clean white with black text */
+  /* Sidebar (keeping neutral) */
   --sidebar-background: 0 0% 100%;
-  --sidebar-foreground: 0 0% 0%;
-  --sidebar-primary: 0 0% 0%;
+  --sidebar-foreground: 0 0% 20%;
+  --sidebar-primary: 95 70% 20%;
   --sidebar-primary-foreground: 0 0% 100%;
-  --sidebar-accent: 0 0% 96%;
-  --sidebar-accent-foreground: 0 0% 0%;
-  --sidebar-border: 0 0% 90%;
-  --sidebar-ring: 0 0% 0%;
+  --sidebar-accent: 44 50% 85%;
+  --sidebar-accent-foreground: 0 0% 20%;
+  --sidebar-border: 44 30% 85%;
+  --sidebar-ring: 95 70% 20%;
+
+  /* 📏 SPACING SYSTEM - Measured from design reference */
+  --section-padding-y: 5rem;
+  --content-margin: 1.25rem;
+  --grid-gap: 1.875rem;
+
+  /* ✨ VISUAL EFFECTS - Exact values from design */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --shadow-button-hover: 0 4px 12px rgba(244, 208, 63, 0.3);
+
+  /* 🎭 TYPOGRAPHY SCALE */
+  --font-heading: 'Merriweather', serif;
+  --font-body: 'Open Sans', sans-serif;
 }
 
 .dark {
@@ -168,25 +187,136 @@ All colors MUST be HSL.
   border-color: hsl(var(--border));
 }
 
+/* 🎨 BASE STYLES - Typography Foundation */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
 body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
   font-feature-settings: "rlig" 1, "calt" 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  margin: 0;
+  padding: 0;
 }
 
-/* Minimal, clean typography */
+/* 📝 HEADING STYLES - Serif font for traditional farming heritage */
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  color: hsl(var(--foreground));
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: hsl(var(--primary));
+  margin: 0;
 }
 
-/* Clean button styles */
+h1 {
+  font-size: 3rem; /* 48px */
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2.25rem; /* 36px */
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.75rem; /* 28px */
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+}
+
+h5 {
+  font-size: 1.25rem; /* 20px */
+}
+
+h6 {
+  font-size: 1.125rem; /* 18px */
+}
+
+/* 📄 TEXT ELEMENTS */
+p {
+  margin: 0 0 1rem 0;
+  line-height: 1.6;
+}
+
+a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: hsl(var(--secondary));
+}
+
+strong {
+  font-weight: 600;
+}
+
+/* 🎯 BUTTON DEFAULTS - Golden yellow pill-shaped buttons */
 button {
-  font-weight: 500;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-button);
+  border: none;
+  background-color: hsl(var(--accent));
+  color: hsl(var(--accent-foreground));
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button-hover);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* 📝 FORM ELEMENTS */
+input,
+textarea,
+select {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid hsl(var(--border));
+  border-radius: var(--radius);
+  background-color: white;
+  color: hsl(var(--foreground));
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: hsl(var(--primary));
+  box-shadow: 0 0 0 3px hsla(var(--primary) / 0.1);
+}
+
+label {
+  font-weight: 600;
+  color: hsl(var(--primary));
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 /* Subtle shadows for depth */
